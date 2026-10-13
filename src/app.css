@@ -1,0 +1,75 @@
+:root {
+	--mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+	--bg: #fff;
+	--ink: #17191c;
+	--muted: #63676e;
+	--faint: #a3a6aa;
+	--soft: #7b7f86;
+	--tile: #fff;
+	--accent: #3000ff;
+	--visited: #8a00c4;
+	--line: #e0e0e0;
+	--dash: #ccc;
+	color-scheme: light;
+}
+
+/* Dark theme, switched off: nothing sets data-theme='dark'. To bring it back, mount
+   ThemeToggle in +layout.svelte, restore static/theme.js from git history, and add a
+   prefers-color-scheme: dark rule with these values. */
+:root[data-theme='dark'] {
+	--bg: #000;
+	--ink: #e9eae6;
+	--muted: #9a9ea4;
+	--faint: #5a5e64;
+	--soft: #868a90;
+	--tile: #f4f4f2;
+	--accent: #cfff00;
+	--visited: #75ff3b;
+	--line: #262626;
+	--dash: #383838;
+	color-scheme: dark;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* No rubber-band bounce at the ends, which would drag the sidebar along. */
+html {
+	overscroll-behavior-y: none;
+}
+
+body {
+	margin: 0;
+	/* Dividers run out to the window's edge without adding a sideways scroll. */
+	overflow-x: clip;
+	background: var(--bg);
+	color: var(--ink);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.45;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: inherit;
+}
+
+:focus-visible {
+	outline: 2px solid var(--ink);
+	outline-offset: 1px;
+}
+
+.app {
+	display: contents;
+}
+
+/* Visually hidden, still read by screen readers. */
+.sr {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
