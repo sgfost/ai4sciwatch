@@ -177,6 +177,8 @@
 		}
 		section + section::before {
 			left: -1rem;
+			/* Stop at the window's edge; 100vw would overflow sideways. */
+			right: -1rem;
 		}
 	}
 </style>
