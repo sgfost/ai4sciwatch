@@ -1,13 +1,13 @@
 // Downloads each entry's site icon into static/icons/ and writes src/lib/icons.json.
-// Run by hand when entries change: `npm run icons`. Needs macOS `sips` to resize.
+// Run by hand when entries change: `npm run icons`. Works on any OS (resizes with `sharp`).
 // Icons are self-hosted so the site makes no third-party requests.
-import { execFileSync } from 'node:child_process';
 import { mkdir, rm, writeFile } from 'node:fs/promises';
+import sharp from 'sharp';
 import { entries } from '../src/lib/directory.ts';
 
 const OUT = 'static/icons';
 const UA =
-	'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128 Safari/537.36';
+	'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128 Safari/537.36';
 const MAX_BYTES = 300_000;
 
 // Hosts whose icons are white-only and vanish on the light tile; these get a monogram.
@@ -51,6 +51,20 @@ function fileKey(url) {
 	return new URL(url).hostname.replace(/^www\./, '').replace(/[^a-z0-9.-]/gi, '-');
 }
 
+// sharp can't read .ico; pull out the largest embedded PNG frame if there is one.
+// (Legacy BMP-only icons throw in sharp and fall through to the next candidate.)
+function unwrapIco(buf) {
+	if (buf.length < 6 || buf.readUInt16LE(0) !== 0 || buf.readUInt16LE(2) !== 1) return buf;
+	let best = null;
+	for (let i = 0; i < buf.readUInt16LE(4); i++) {
+		const size = buf.readUInt32LE(6 + i * 16 + 8);
+		const offset = buf.readUInt32LE(6 + i * 16 + 12);
+		const frame = buf.subarray(offset, offset + size);
+		if (frame.subarray(1, 4).toString() === 'PNG' && (!best || size > best.length)) best = frame;
+	}
+	return best ?? buf;
+}
+
 async function save(iconUrl, key) {
 	const res = await get(iconUrl);
 	const type = res.headers.get('content-type') ?? '';
@@ -61,15 +75,7 @@ async function save(iconUrl, key) {
 		await writeFile(`${OUT}/${key}.svg`, bytes);
 		return `${key}.svg`;
 	}
-	const tmp = `${OUT}/.${key}.tmp`;
-	await writeFile(tmp, bytes);
-	try {
-		execFileSync('sips', ['-s', 'format', 'png', '-Z', '64', tmp, '--out', `${OUT}/${key}.png`], {
-			stdio: 'ignore'
-		});
-	} finally {
-		await rm(tmp, { force: true });
-	}
+	await sharp(unwrapIco(bytes)).resize(64, 64, { fit: 'inside' }).png().toFile(`${OUT}/${key}.png`);
 	return `${key}.png`;
 }
 
