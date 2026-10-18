@@ -14,7 +14,7 @@ All content is in `src/lib/directory.ts`; the title and description are in `src/
 - **Entries** have a `name`, `url`, `category`, `sub` (where the category has subcategories) and a one-line `blurb`. Optional `notes` show on hover; `reviewed` and `sources` record when and where an entry was last checked.
 - **Organisations** are a registry referenced by `organisationIds`; use `author` for individuals. They are searchable but not shown.
 
-Icons are self-hosted in `static/icons/`, so the site makes no third-party requests. After changing entries, run `npm run icons` (macOS, uses `sips`) to refetch them and rewrite `src/lib/icons.json`. Entries without a usable icon get a monogram.
+Icons are self-hosted in `static/icons/`, so the site makes no third-party requests. After changing entries, run `npm run icons` (any OS; resizes with `sharp`) to refetch them and rewrite `src/lib/icons.json`. Entries without a usable icon get a monogram.
 
 ## Development
 
