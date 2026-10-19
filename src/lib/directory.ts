@@ -5,7 +5,8 @@ export const categories = {
 		subs: {
 			search: 'Search and reading',
 			reviews: 'Systematic reviews',
-			agents: 'Research agents'
+			agents: 'Research agents',
+			tooling: 'Agent tooling'
 		}
 	},
 	review: {
@@ -51,12 +52,20 @@ export const organisations = {
 		name: 'Anthropic',
 		url: 'https://www.anthropic.com/'
 	},
+	bids: {
+		name: 'BIDS, UC Berkeley',
+		url: 'https://bids.berkeley.edu/'
+	},
 	'cactus-communications': {
 		name: 'Cactus Communications'
 	},
 	'center-for-open-science': {
 		name: 'Center for Open Science',
 		url: 'https://www.cos.io/'
+	},
+	cnrs: {
+		name: 'CNRS',
+		url: 'https://www.cnrs.fr/'
 	},
 	'dp-technology': {
 		name: 'DP Technology'
@@ -103,6 +112,10 @@ export const organisations = {
 	},
 	'knowledge-pixels': {
 		name: 'Knowledge Pixels'
+	},
+	'lightcone-research': {
+		name: 'Lightcone Research',
+		url: 'https://www.lightconeresearch.org/'
 	},
 	'max-planck-institute-for-human-development': {
 		name: 'Max Planck Institute for Human Development'
@@ -1054,7 +1067,7 @@ export const entries: Entry[] = [
 		name: 'Claude Scientific Writer',
 		url: 'https://github.com/K-Dense-AI/claude-scientific-writer',
 		category: 'assistants',
-		sub: 'agents',
+		sub: 'tooling',
 		blurb:
 			'Researches and drafts scientific papers, reports, and proposals, with literature lookup and citation verification.',
 		organisationIds: ['k-dense'],
@@ -1064,7 +1077,7 @@ export const entries: Entry[] = [
 		name: 'Scientific Agent Skills',
 		url: 'https://github.com/K-Dense-AI/scientific-agent-skills',
 		category: 'assistants',
-		sub: 'agents',
+		sub: 'tooling',
 		blurb:
 			'Reusable instructions and workflows for scientific analysis and database access in compatible AI agents.',
 		organisationIds: ['k-dense'],
@@ -1159,6 +1172,22 @@ export const entries: Entry[] = [
 		sources: [
 			'https://www.prnewswire.com/news-releases/phylo-introduces-biomni-lab-an-integrated-environment-for-ai-native-biology-302677036.html',
 			'https://phylo.bio/announcement'
+		]
+	},
+	{
+		name: 'Lightcone Research',
+		url: 'https://www.lightconeresearch.org/',
+		category: 'assistants',
+		sub: 'tooling',
+		blurb:
+			'Open-source tools that make AI-run scientific analyses record their choices and stay re-runnable, built for Claude Code and Codex.',
+		organisationIds: ['lightcone-research', 'bids', 'cnrs'],
+		reviewed: '2026-10-19',
+		sources: [
+			'https://www.lightconeresearch.org/',
+			'https://docs.lightconeresearch.org/',
+			'https://bids.berkeley.edu/programs-initiatives/lightcone-research',
+			'https://pypi.org/project/lightcone-cli/'
 		]
 	}
 ];
