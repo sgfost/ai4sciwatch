@@ -11,13 +11,6 @@
 		c === 'assistants' ? resolve('/') : resolve('/[category]', { category: c });
 	const count = (c: Category) =>
 		entries.filter((e) => e.category === c && matches(e, search.query)).length;
-	// Keep the current category visible when the nav scrolls sideways on narrow screens.
-	$effect(() => {
-		void current;
-		document
-			.querySelector('nav [aria-current="page"]')
-			?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-	});
 	function onkeydown(e: KeyboardEvent) {
 		if (e.key === '/' && !(e.target instanceof HTMLInputElement)) {
 			e.preventDefault();
@@ -185,7 +178,7 @@
 		font-weight: 400;
 		font-variant-numeric: tabular-nums;
 	}
-	/* On narrow screens the sidebar becomes a header with scrolling rows. */
+	/* On narrow screens the sidebar becomes a header with wrapping rows. */
 	@media (max-width: 860px) {
 		/* Title and search share the first row; categories wrap below. */
 		aside {
@@ -228,15 +221,12 @@
 			order: 2;
 			margin-top: 0;
 		}
-		/* Scrolls edge to edge. */
+		/* Tabs wrap onto extra rows; never scroll sideways. */
 		nav ul {
 			display: flex;
-			overflow-x: auto;
-			scrollbar-width: none;
-			white-space: nowrap;
+			flex-wrap: wrap;
 			gap: 0.25rem;
-			margin: 0 -1rem;
-			padding: 0 1rem;
+			min-width: 0;
 		}
 		nav a {
 			margin: 0;
