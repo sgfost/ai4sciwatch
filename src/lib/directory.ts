@@ -1067,7 +1067,7 @@ export const entries: Entry[] = [
 		name: 'Claude Scientific Writer',
 		url: 'https://github.com/K-Dense-AI/claude-scientific-writer',
 		category: 'assistants',
-		sub: 'tooling',
+		sub: 'agents',
 		blurb:
 			'Researches and drafts scientific papers, reports, and proposals, with literature lookup and citation verification.',
 		organisationIds: ['k-dense'],
