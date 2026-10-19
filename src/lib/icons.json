@@ -53,6 +53,7 @@
 	"https://www.proofig.com/": "/icons/proofig.com.png",
 	"https://regcheck.app/": "/icons/regcheck.app.png",
 	"https://www.reviewerzero.ai/": "/icons/reviewerzero.ai.png",
+	"https://www.k-dense.ai/tools/rigor-scan": "/icons/k-dense.ai.png",
 	"https://rivervalley.io/": "/icons/rivervalley.io.png",
 	"https://scimeto.app/": "/icons/scimeto.app.svg",
 	"https://www.sciscore.com/": "/icons/sciscore.com.png",
@@ -83,5 +84,18 @@
 	"https://nanopub.net/": "/icons/nanopub.net.png",
 	"https://orkg.org/": "/icons/orkg.org.png",
 	"https://riojournal.com/": "/icons/riojournal.com.png",
-	"https://knowledgeloom.tib.eu/": "/icons/knowledgeloom.tib.eu.png"
+	"https://knowledgeloom.tib.eu/": "/icons/knowledgeloom.tib.eu.png",
+	"https://www.k-dense.ai/products/k-dense-web": "/icons/k-dense.ai.png",
+	"https://github.com/K-Dense-AI/k-dense-byok": "/icons/github.com.svg",
+	"https://www.k-dense.ai/products/faraday": "/icons/k-dense.ai.png",
+	"https://github.com/K-Dense-AI/claude-scientific-writer": "/icons/github.com.svg",
+	"https://github.com/K-Dense-AI/scientific-agent-skills": "/icons/github.com.svg",
+	"https://www.k-dense.ai/tools/claimscape": "/icons/k-dense.ai.png",
+	"https://research.google/deepreview": "/icons/research.google.png",
+	"https://allenai.org/asta/bench": "/icons/allenai.org.png",
+	"https://huggingface.co/datasets/futurehouse/labbench2": "/icons/huggingface.co.png",
+	"https://paperpal.com/preflight": "/icons/paperpal.com.png",
+	"https://openai.com/prism/": "/icons/openai.com.png",
+	"https://www.anthropic.com/news/claude-science-ai-workbench": "/icons/anthropic.com.png",
+	"https://phylo.bio/biomni": "/icons/phylo.bio.svg"
 }
