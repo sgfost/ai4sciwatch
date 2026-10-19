@@ -47,6 +47,13 @@ export const organisations = {
 	ai2: {
 		name: 'Ai2'
 	},
+	anthropic: {
+		name: 'Anthropic',
+		url: 'https://www.anthropic.com/'
+	},
+	'cactus-communications': {
+		name: 'Cactus Communications'
+	},
 	'center-for-open-science': {
 		name: 'Center for Open Science',
 		url: 'https://www.cos.io/'
@@ -106,6 +113,10 @@ export const organisations = {
 	},
 	openai: {
 		name: 'OpenAI'
+	},
+	phylo: {
+		name: 'Phylo',
+		url: 'https://phylo.bio/'
 	},
 	pensoft: {
 		name: 'Pensoft'
@@ -329,9 +340,10 @@ export const entries: Entry[] = [
 		url: 'https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/',
 		category: 'assistants',
 		sub: 'agents',
-		blurb:
-			'Multi-agent system that generates, debates, ranks, and refines hypotheses and research proposals.',
-		organisationIds: ['google']
+		blurb: 'Google’s AI that suggests and tests research ideas; now part of Gemini for Science.',
+		organisationIds: ['google'],
+		reviewed: '2026-10-18',
+		sources: ['https://ai.google/gemini-for-science/']
 	},
 	{
 		name: 'Asta',
@@ -625,9 +637,10 @@ export const entries: Entry[] = [
 		url: 'https://octym.proofig.com/',
 		category: 'review',
 		sub: 'integrity',
-		blurb:
-			'Manuscript integrity suite covering images, references, statistics, methods, and reproducibility.',
-		organisationIds: ['proofig']
+		blurb: 'Checks a manuscript’s images, references, statistics, and methods in one review.',
+		organisationIds: ['proofig'],
+		reviewed: '2026-10-18',
+		sources: ['https://octym.proofig.com/', 'https://www.proofig.com/refguard/']
 	},
 	{
 		name: 'Penelope.ai',
@@ -641,8 +654,10 @@ export const entries: Entry[] = [
 		url: 'https://www.proofig.com/',
 		category: 'review',
 		sub: 'integrity',
-		blurb: 'Image-integrity screening for duplication, manipulation, and reuse.',
-		organisationIds: ['proofig']
+		blurb: 'Checks figures for copied, edited, or AI-made images.',
+		organisationIds: ['proofig'],
+		reviewed: '2026-10-18',
+		sources: ['https://www.proofig.com/refguard/']
 	},
 	{
 		name: 'RegCheck',
@@ -1064,6 +1079,87 @@ export const entries: Entry[] = [
 			'Maps PubMed evidence for a claim by study design and date, linking assessments to abstract sentences; reviews are separated from primary evidence.',
 		organisationIds: ['k-dense'],
 		reviewed: '2026-09-24'
+	},
+	{
+		name: 'Deep Review',
+		url: 'https://research.google/deepreview',
+		category: 'review',
+		sub: 'review',
+		blurb:
+			'Google’s AI that reads a paper or document and points out errors in its logic and claims.',
+		organisationIds: ['google'],
+		reviewed: '2026-10-18',
+		sources: [
+			'https://research.google/blog/analyzing-technical-documents-with-deep-review/',
+			'https://arxiv.org/abs/2606.28277'
+		]
+	},
+	{
+		name: 'AstaBench',
+		url: 'https://allenai.org/asta/bench',
+		category: 'benchmarks',
+		blurb:
+			'Tests how well AI agents handle science tasks like finding papers, running code, and analysing data.',
+		organisationIds: ['ai2'],
+		reviewed: '2026-10-18',
+		sources: ['https://allenai.org/asta/bench']
+	},
+	{
+		name: 'LABBench2',
+		url: 'https://huggingface.co/datasets/futurehouse/labbench2',
+		category: 'benchmarks',
+		blurb:
+			'About 1,900 biology research questions for testing AI, harder than the original LAB-Bench.',
+		organisationIds: ['edison-scientific', 'futurehouse'],
+		reviewed: '2026-10-18',
+		sources: ['https://huggingface.co/datasets/futurehouse/labbench2']
+	},
+	{
+		name: 'Paperpal Preflight',
+		url: 'https://paperpal.com/preflight',
+		category: 'review',
+		sub: 'integrity',
+		blurb:
+			'Screens manuscripts for language, integrity, AI-written text, and image problems before review.',
+		organisationIds: ['cactus-communications'],
+		reviewed: '2026-10-18',
+		sources: ['https://paperpal.com/preflight']
+	},
+	{
+		name: 'Prism',
+		url: 'https://openai.com/prism/',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Free online LaTeX editor with ChatGPT built in to help write papers and find citations.',
+		organisationIds: ['openai'],
+		reviewed: '2026-10-18',
+		sources: ['https://openai.com/index/introducing-prism/', 'https://openai.com/prism/']
+	},
+	{
+		name: 'Claude Science',
+		url: 'https://www.anthropic.com/news/claude-science-ai-workbench',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Anthropic’s app where an AI runs scientific analyses and checks its own citations and numbers.',
+		organisationIds: ['anthropic'],
+		reviewed: '2026-10-18',
+		sources: ['https://www.anthropic.com/news/claude-science-ai-workbench']
+	},
+	{
+		name: 'Biomni Lab',
+		url: 'https://phylo.bio/biomni',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Online workspace where biologists direct AI agents that use 300+ research tools and databases.',
+		organisationIds: ['phylo'],
+		reviewed: '2026-10-18',
+		sources: [
+			'https://www.prnewswire.com/news-releases/phylo-introduces-biomni-lab-an-integrated-environment-for-ai-native-biology-302677036.html',
+			'https://phylo.bio/announcement'
+		]
 	}
 ];
 
