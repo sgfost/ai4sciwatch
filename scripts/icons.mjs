@@ -1,7 +1,7 @@
 // Downloads each entry's site icon into static/icons/ and writes src/lib/icons.json.
-// Run by hand when entries change: `npm run icons`. Works on any OS (resizes with `sharp`).
+// Run by hand when entries change: `npm run icons` (only fetches missing icons; add `-- --force` to redo all). Works on any OS (resizes with `sharp`).
 // Icons are self-hosted so the site makes no third-party requests.
-import { mkdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, rm, writeFile } from 'node:fs/promises';
 import sharp from 'sharp';
 import { entries } from '../src/lib/directory.ts';
 
@@ -16,7 +16,7 @@ const skip = new Set(['inspectai.app']);
 async function get(url) {
 	const res = await fetch(url, {
 		headers: { 'user-agent': UA },
-		signal: AbortSignal.timeout(15000)
+		signal: AbortSignal.timeout(6000)
 	});
 	if (!res.ok) throw new Error(`${res.status} ${url}`);
 	return res;
@@ -79,34 +79,51 @@ async function save(iconUrl, key) {
 	return `${key}.png`;
 }
 
-await rm(OUT, { recursive: true, force: true });
+// Only missing icons are fetched. Pass --force to re-download everything.
+const force = process.argv.includes('--force');
+const CONCURRENCY = 8;
+
+if (force) await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
 
-const byKey = new Map();
-const manifest = {};
+const existing = new Set(await readdir(OUT));
+const findExisting = (key) => [`${key}.png`, `${key}.svg`].find((f) => existing.has(f)) ?? null;
 
+async function fetchIcon(url, host, key) {
+	const candidates = await iconCandidates(url).catch(() => []);
+	candidates.push(`https://www.google.com/s2/favicons?domain=${host}&sz=64`);
+	for (const c of candidates.slice(0, 4)) {
+		try {
+			return await save(c, key);
+		} catch {}
+	}
+	return null;
+}
+
+// One job per host, run a few at a time so slow sites don't hold up the rest.
+const jobs = new Map();
 for (const e of entries) {
 	const host = new URL(e.url).hostname;
 	if (skip.has(host)) continue;
 	const key = fileKey(e.url);
-	if (!byKey.has(key)) {
-		byKey.set(
-			key,
-			(async () => {
-				const candidates = await iconCandidates(e.url).catch(() => []);
-				candidates.push(`https://www.google.com/s2/favicons?domain=${host}&sz=64`);
-				for (const c of candidates) {
-					try {
-						return await save(c, key);
-					} catch {}
-				}
-				return null;
-			})()
-		);
-	}
-	const file = await byKey.get(key);
+	if (!jobs.has(key)) jobs.set(key, { url: e.url, host, key, file: findExisting(key) });
+}
+const todo = [...jobs.values()].filter((j) => !j.file);
+let next = 0;
+await Promise.all(
+	Array.from({ length: Math.min(CONCURRENCY, todo.length) }, async () => {
+		while (next < todo.length) {
+			const j = todo[next++];
+			j.file = await fetchIcon(j.url, j.host, j.key);
+			console.log(j.file ? '✓' : '·', j.host, j.file ?? '');
+		}
+	})
+);
+
+const manifest = {};
+for (const e of entries) {
+	const file = jobs.get(fileKey(e.url))?.file;
 	if (file) manifest[e.url] = `/icons/${file}`;
-	console.log(file ? '✓' : '·', e.name, file ?? '');
 }
 
 await writeFile('src/lib/icons.json', JSON.stringify(manifest, null, '\t') + '\n');
