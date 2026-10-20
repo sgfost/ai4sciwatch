@@ -52,6 +52,10 @@ export const organisations = {
 		name: 'Anthropic',
 		url: 'https://www.anthropic.com/'
 	},
+	benchling: {
+		name: 'Benchling',
+		url: 'https://www.benchling.com/'
+	},
 	bids: {
 		name: 'BIDS, UC Berkeley',
 		url: 'https://bids.berkeley.edu/'
@@ -113,6 +117,10 @@ export const organisations = {
 	'knowledge-pixels': {
 		name: 'Knowledge Pixels'
 	},
+	'laude-institute': {
+		name: 'Laude Institute',
+		url: 'https://www.laude.org/'
+	},
 	'lightcone-research': {
 		name: 'Lightcone Research',
 		url: 'https://www.lightconeresearch.org/'
@@ -123,6 +131,10 @@ export const organisations = {
 	'metascience-observatory': {
 		name: 'Metascience Observatory',
 		url: 'https://metascienceobservatory.org/'
+	},
+	nlm: {
+		name: 'National Library of Medicine',
+		url: 'https://www.nlm.nih.gov/'
 	},
 	openai: {
 		name: 'OpenAI'
@@ -164,6 +176,10 @@ export const organisations = {
 		name: 'Scirenity',
 		url: 'https://scirenity.com/platforms'
 	},
+	stanford: {
+		name: 'Stanford University',
+		url: 'https://www.stanford.edu/'
+	},
 	'stanford-ml-group': {
 		name: 'Stanford ML Group'
 	},
@@ -179,6 +195,10 @@ export const organisations = {
 	},
 	'utrecht-university': {
 		name: 'Utrecht University'
+	},
+	'vals-ai': {
+		name: 'Vals AI',
+		url: 'https://www.vals.ai/'
 	}
 } satisfies Record<string, Organisation>;
 export type OrganisationId = keyof typeof organisations;
@@ -408,16 +428,22 @@ export const entries: Entry[] = [
 		organisationIds: ['stanford-snap']
 	},
 	{
-		name: 'The AI Scientist',
-		url: 'https://github.com/SakanaAI/AI-Scientist',
+		name: 'The Agentic Scientist',
+		url: 'https://github.com/SakanaAI/AI-Scientist-v3',
 		category: 'assistants',
 		sub: 'agents',
 		blurb:
-			'Automates ideas, code, experiments, and write-up; v2 adds agentic tree search over experiments.',
-		organisationIds: ['sakana-ai']
+			'Sakana’s successor to The AI Scientist, which has coding agents run experiments and write up a paper.',
+		organisationIds: ['sakana-ai'],
+		reviewed: '2026-10-20',
+		sources: [
+			'https://github.com/SakanaAI/AI-Scientist-v3',
+			'https://pub.sakana.ai/agentic-scientist/',
+			'https://arxiv.org/abs/2610.18933'
+		]
 	},
 	{
-		name: 'Faraday',
+		name: 'Inherent Faraday',
 		url: 'https://inherentlabs.ai/research/training-to-replicate',
 		category: 'assistants',
 		sub: 'agents',
@@ -554,7 +580,9 @@ export const entries: Entry[] = [
 		category: 'review',
 		sub: 'review',
 		blurb:
-			'Breaks papers and grants into claims to expose gaps in logic and evidence; a cross-paper Validity Machine is sold to R&D teams.'
+			'Breaks papers and grants into claims to expose gaps in logic and evidence; a cross-paper Validity Machine is sold to R&D teams.',
+		reviewed: '2026-10-20',
+		sources: ['https://www.qedscience.com/', 'https://x.com/qedScience/status/2112513653199004058']
 	},
 	{
 		name: 'Refine',
@@ -1054,7 +1082,7 @@ export const entries: Entry[] = [
 		reviewed: '2026-09-24'
 	},
 	{
-		name: 'Faraday',
+		name: 'K-Dense Faraday',
 		url: 'https://www.k-dense.ai/products/faraday',
 		category: 'assistants',
 		sub: 'agents',
@@ -1188,6 +1216,66 @@ export const entries: Entry[] = [
 			'https://docs.lightconeresearch.org/',
 			'https://bids.berkeley.edu/programs-initiatives/lightcone-research',
 			'https://pypi.org/project/lightcone-cli/'
+		]
+	},
+	{
+		name: 'Terminal-Bench-Science',
+		url: 'https://www.terminal-bench-science.ai/',
+		category: 'benchmarks',
+		blurb:
+			'Tests AI agents on real research tasks written by working scientists, with a public leaderboard.',
+		organisationIds: ['stanford', 'laude-institute'],
+		reviewed: '2026-10-20',
+		sources: [
+			'https://www.terminal-bench-science.ai/',
+			'https://www.terminal-bench-science.ai/announcement'
+		]
+	},
+	{
+		name: 'Rosalind Workbench',
+		url: 'https://developers.openai.com/blog/rosalind-workbench',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'OpenAI’s biology workspace in ChatGPT that links research tools to help analyse data and plan experiments.',
+		organisationIds: ['openai'],
+		reviewed: '2026-10-20',
+		sources: ['https://developers.openai.com/blog/rosalind-workbench']
+	},
+	{
+		name: 'Vals Science Index',
+		url: 'https://www.vals.ai/benchmarks/science_index',
+		category: 'benchmarks',
+		blurb:
+			'Averages three science benchmarks into one score for comparing how well AI models do research.',
+		organisationIds: ['vals-ai'],
+		reviewed: '2026-10-20',
+		sources: ['https://www.vals.ai/benchmarks/science_index']
+	},
+	{
+		name: 'Science Foundries',
+		url: 'https://www.benchling.com/blog/introducing-science-foundries',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Teams of AI agents run lab processes for Benchling customers, pausing for scientists’ approval at chosen steps.',
+		organisationIds: ['benchling'],
+		reviewed: '2026-10-20',
+		sources: ['https://www.benchling.com/blog/introducing-science-foundries']
+	},
+	{
+		name: 'Linked Discoveries',
+		url: 'https://linkeddiscoveries.ncbi.nlm.nih.gov/',
+		category: 'assistants',
+		sub: 'search',
+		blurb:
+			'Free NIH tool that maps the papers around a PubMed article, including replications, reviews and retractions.',
+		organisationIds: ['nlm'],
+		reviewed: '2026-10-20',
+		sources: [
+			'https://linkeddiscoveries.ncbi.nlm.nih.gov/',
+			'https://www.nih.gov/news-events/news-releases/nih-launches-new-pubmed-tool-strengthen-research-replication-reproducibility',
+			'https://ncbiinsights.ncbi.nlm.nih.gov/2026/09/24/explore-connections-biomedical-literature/'
 		]
 	}
 ];
