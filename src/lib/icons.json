@@ -23,7 +23,7 @@
 	"https://edisonscientific.com/": "/icons/edisonscientific.com.png",
 	"https://www.futurehouse.org/": "/icons/futurehouse.org.png",
 	"https://github.com/snap-stanford/POPPER": "/icons/github.com.svg",
-	"https://github.com/SakanaAI/AI-Scientist": "/icons/github.com.svg",
+	"https://github.com/SakanaAI/AI-Scientist-v3": "/icons/github.com.svg",
 	"https://inherentlabs.ai/research/training-to-replicate": "/icons/inherentlabs.ai.png",
 	"https://github.com/siegelz/core-bench": "/icons/github.com.svg",
 	"https://github.com/CenterForOpenScience/llm-benchmarking": "/icons/github.com.svg",
@@ -98,5 +98,10 @@
 	"https://openai.com/prism/": "/icons/openai.com.png",
 	"https://www.anthropic.com/news/claude-science-ai-workbench": "/icons/anthropic.com.png",
 	"https://phylo.bio/biomni": "/icons/phylo.bio.svg",
-	"https://www.lightconeresearch.org/": "/icons/lightconeresearch.org.svg"
+	"https://www.lightconeresearch.org/": "/icons/lightconeresearch.org.svg",
+	"https://www.terminal-bench-science.ai/": "/icons/terminal-bench-science.ai.svg",
+	"https://developers.openai.com/blog/rosalind-workbench": "/icons/developers.openai.com.png",
+	"https://www.vals.ai/benchmarks/science_index": "/icons/vals.ai.png",
+	"https://www.benchling.com/blog/introducing-science-foundries": "/icons/benchling.com.png",
+	"https://linkeddiscoveries.ncbi.nlm.nih.gov/": "/icons/linkeddiscoveries.ncbi.nlm.nih.gov.png"
 }
