@@ -713,7 +713,9 @@ export const entries: Entry[] = [
 		category: 'review',
 		sub: 'integrity',
 		blurb:
-			'Screens for image manipulation, statistical and citation errors, and author identity fraud.'
+			'Screens for image manipulation, statistical and citation errors, and author identity fraud.',
+		reviewed: '2026-10-27',
+		sources: ['https://www.silverchair.com/news/reviewerzero-joins-silverchair-universe/']
 	},
 	{
 		name: 'Rigor Scan',
@@ -724,14 +726,6 @@ export const entries: Entry[] = [
 			'Checks reporting completeness with sentence-linked evidence, recalculates statistics, and flags retracted references. Its score measures reporting, not whether findings are correct.',
 		organisationIds: ['k-dense'],
 		reviewed: '2026-09-24'
-	},
-	{
-		name: 'RVT Integrity Checker',
-		url: 'https://rivervalley.io/',
-		category: 'review',
-		sub: 'integrity',
-		blurb: 'Flags potential issues at submission inside River Valley’s ReView peer-review system.',
-		organisationIds: ['river-valley-technologies']
 	},
 	{
 		name: 'SciMeto',
@@ -758,6 +752,19 @@ export const entries: Entry[] = [
 		blurb:
 			'Shared infrastructure where publishers screen submissions for paper mills and other integrity signals.',
 		organisationIds: ['stm']
+	},
+	{
+		name: 'Zintzo Research Integrity',
+		url: 'https://rivervalley.io/products/integrity',
+		category: 'review',
+		sub: 'integrity',
+		blurb:
+			'Runs 40+ integrity checks on submissions, in its own web app or inside ReView and other review systems.',
+		organisationIds: ['river-valley-technologies'],
+		reviewed: '2026-10-27',
+		sources: [
+			'https://www.stm-publishing.com/river-valley-technologies-launches-zintzo-research-integrity-with-risk-triage-dashboard/'
+		]
 	},
 	{
 		name: 'Black Spatula Project',
@@ -1239,8 +1246,11 @@ export const entries: Entry[] = [
 		blurb:
 			'OpenAI’s biology workspace in ChatGPT that links research tools to help analyse data and plan experiments.',
 		organisationIds: ['openai'],
-		reviewed: '2026-10-20',
-		sources: ['https://developers.openai.com/blog/rosalind-workbench']
+		reviewed: '2026-10-27',
+		sources: [
+			'https://developers.openai.com/blog/rosalind-workbench',
+			'https://openai.com/index/scaling-ai-research-for-complex-biological-data/'
+		]
 	},
 	{
 		name: 'Vals Science Index',
