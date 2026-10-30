@@ -1167,17 +1167,6 @@ export const entries: Entry[] = [
 		sources: ['https://paperpal.com/preflight']
 	},
 	{
-		name: 'Prism',
-		url: 'https://openai.com/prism/',
-		category: 'assistants',
-		sub: 'agents',
-		blurb:
-			'Free online LaTeX editor with ChatGPT built in to help write papers and find citations.',
-		organisationIds: ['openai'],
-		reviewed: '2026-10-18',
-		sources: ['https://openai.com/index/introducing-prism/', 'https://openai.com/prism/']
-	},
-	{
 		name: 'Claude Science',
 		url: 'https://www.anthropic.com/news/claude-science-ai-workbench',
 		category: 'assistants',
