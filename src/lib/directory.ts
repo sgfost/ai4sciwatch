@@ -48,9 +48,25 @@ export const organisations = {
 	ai2: {
 		name: 'Ai2'
 	},
+	aipoch: {
+		name: 'AIPOCH',
+		url: 'https://aipoch.com/'
+	},
+	aitonomy: {
+		name: 'AItonomy Foundation',
+		url: 'https://aitonomy.org/'
+	},
+	alphaxiv: {
+		name: 'alphaXiv',
+		url: 'https://www.alphaxiv.org/'
+	},
 	anthropic: {
 		name: 'Anthropic',
 		url: 'https://www.anthropic.com/'
+	},
+	benchflow: {
+		name: 'BenchFlow',
+		url: 'https://www.benchflow.ai/'
 	},
 	benchling: {
 		name: 'Benchling',
@@ -94,6 +110,13 @@ export const organisations = {
 	google: {
 		name: 'Google'
 	},
+	'google-deepmind': {
+		name: 'Google DeepMind',
+		url: 'https://deepmind.google/'
+	},
+	'hexagon-mathematics-foundation': {
+		name: 'Hexagon Mathematics Foundation'
+	},
 	inherent: {
 		name: 'Inherent'
 	},
@@ -124,6 +147,10 @@ export const organisations = {
 	'lightcone-research': {
 		name: 'Lightcone Research',
 		url: 'https://www.lightconeresearch.org/'
+	},
+	'ligo-biosciences': {
+		name: 'Ligo Biosciences',
+		url: 'https://www.ligo.bio/'
 	},
 	'max-planck-institute-for-human-development': {
 		name: 'Max Planck Institute for Human Development'
@@ -189,6 +216,9 @@ export const organisations = {
 	tib: {
 		name: 'TIB',
 		url: 'https://www.tib.eu/'
+	},
+	'university-of-chicago': {
+		name: 'University of Chicago'
 	},
 	'university-of-padua': {
 		name: 'University of Padua'
@@ -351,14 +381,6 @@ export const entries: Entry[] = [
 		sub: 'reviews',
 		blurb:
 			'Collaborative screening for systematic reviews, with AI prioritisation, deduplication, and PICO extraction.'
-	},
-	{
-		name: 'RobotReviewer',
-		url: 'https://github.com/ijmarshall/robotreviewer',
-		category: 'assistants',
-		sub: 'reviews',
-		blurb: 'Machine-learning extraction and risk-of-bias assessment for randomised-trial reports.',
-		reviewed: '2026-09-24'
 	},
 	{
 		name: 'Agent Laboratory',
@@ -1276,6 +1298,105 @@ export const entries: Entry[] = [
 			'https://www.nih.gov/news-events/news-releases/nih-launches-new-pubmed-tool-strengthen-research-replication-reproducibility',
 			'https://ncbiinsights.ncbi.nlm.nih.gov/2026/09/24/explore-connections-biomedical-literature/'
 		]
+	},
+	{
+		name: 'OpenResearch',
+		url: 'https://github.com/alphaXiv/OpenResearch',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Free app that turns your coding agents into research agents, from reading papers to running experiments.',
+		organisationIds: ['alphaxiv'],
+		reviewed: '2026-11-10',
+		sources: ['https://openresearch.sh/']
+	},
+	{
+		name: 'Antigravity for Science',
+		url: 'https://antigravity.google/use-cases/science/',
+		category: 'assistants',
+		sub: 'tooling',
+		blurb:
+			'Science add-on for Google’s Antigravity agent app that connects agents to 30+ life-science databases.',
+		organisationIds: ['google', 'google-deepmind'],
+		reviewed: '2026-11-10',
+		sources: [
+			'https://antigravity.google/use-cases/science/',
+			'https://github.com/google-deepmind/science-skills',
+			'https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/'
+		]
+	},
+	{
+		name: 'aiXiv',
+		url: 'https://aixiv.science/',
+		category: 'publishing',
+		sub: 'platforms',
+		blurb: 'Preprint server for papers written by AI agents or by people, with AI peer review.',
+		reviewed: '2026-11-10',
+		sources: ['https://arxiv.org/abs/2508.15126']
+	},
+	{
+		name: 'Hexagon',
+		url: 'https://hexagonmath.org/',
+		category: 'publishing',
+		sub: 'platforms',
+		blurb:
+			'Repository for maths and theoretical computer science papers that labels how much AI did and humans understood.',
+		organisationIds: ['hexagon-mathematics-foundation'],
+		reviewed: '2026-11-10',
+		sources: ['https://hexagonmath.org/about', 'https://hexagonmath.org/abs/2610.00577']
+	},
+	{
+		name: 'Science’s Last Exam',
+		url: 'https://sciences-last-exam.org/',
+		category: 'benchmarks',
+		blurb:
+			'113 real research tasks across 9 fields, checked against held-back results: can an agent do the research?',
+		organisationIds: ['aitonomy'],
+		reviewed: '2026-11-10',
+		sources: ['https://aitonomy.org/']
+	},
+	{
+		name: 'BioBasicsBench',
+		url: 'https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science',
+		category: 'benchmarks',
+		blurb:
+			'100 everyday wet-lab tasks using raw gels, plates and microscope images: can AI read lab results right?',
+		organisationIds: ['openai', 'ligo-biosciences'],
+		reviewed: '2026-11-10',
+		sources: ['https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science']
+	},
+	{
+		name: 'Living Science',
+		url: 'https://livingscience.ai/',
+		category: 'review',
+		sub: 'reproduction',
+		blurb:
+			'Reruns a well-known published study each week with an AI agent, then tests it on newer data.',
+		organisationIds: ['university-of-chicago', 'sai-labs'],
+		author: 'Chenhao Tan',
+		reviewed: '2026-11-10',
+		sources: ['https://livingscience.ai/about', 'https://chenhaot.com/']
+	},
+	{
+		name: 'AIPOCH Open-Science',
+		url: 'https://github.com/aipoch/open-science',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Open-source desktop research workbench with AI agents that keeps a record of how each result was made.',
+		organisationIds: ['aipoch'],
+		reviewed: '2026-11-10',
+		sources: ['https://aipoch.com/open-science']
+	},
+	{
+		name: 'FrontierPhysics',
+		url: 'https://www.benchflow.ai/frontierphysics',
+		category: 'benchmarks',
+		blurb:
+			'56 projects from physicists’ own research: can an agent do the work and write a publishable paper?',
+		organisationIds: ['benchflow'],
+		reviewed: '2026-11-10',
+		sources: ['https://arxiv.org/abs/2611.06910']
 	}
 ];
 

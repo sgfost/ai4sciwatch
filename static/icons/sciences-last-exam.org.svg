@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .orbit { stroke: #16151c; }
+    .planet { fill: #584b9a; }
+    @media (prefers-color-scheme: dark) { .orbit { stroke: #ecebf2; } .planet { fill: #a99fe6; } }
+  </style>
+  <circle class="orbit" cx="16" cy="16" r="11.5" fill="none" stroke-width="1.4"/>
+  <circle class="orbit" cx="16" cy="16" r="5" fill="none" stroke-width="1.4"/>
+  <circle class="planet" cx="27.5" cy="16" r="2.6"/>
+</svg>
