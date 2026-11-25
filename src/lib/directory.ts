@@ -526,16 +526,6 @@ export const entries: Entry[] = [
 			'107 tasks from 19 astrophysics papers, written with their authors, testing end-to-end replication.'
 	},
 	{
-		name: 'evidence.guide',
-		url: 'https://evidence.guide/',
-		category: 'review',
-		sub: 'reporting',
-		blurb:
-			'Turns experimental papers into structured rows of tests, statistics, sample sizes, and design, with source snippets.',
-		organisationIds: ['robyn-dawes-institute'],
-		reviewed: '2026-09-24'
-	},
-	{
 		name: 'AI Peer Review',
 		url: 'https://github.com/poldrack/ai-peer-review',
 		category: 'review',
@@ -686,6 +676,16 @@ export const entries: Entry[] = [
 		sub: 'reporting',
 		blurb:
 			'Checks data sharing and other open-science practices in manuscripts and returns contextual feedback.'
+	},
+	{
+		name: 'evidence.guide',
+		url: 'https://evidence.guide/',
+		category: 'review',
+		sub: 'integrity',
+		blurb: 'A place to look up audits and checks of published papers, with an open API.',
+		organisationIds: ['robyn-dawes-institute'],
+		reviewed: '2026-11-25',
+		sources: ['https://paullitvak.com/p/announcing-evidence-guide']
 	},
 	{
 		name: 'Imagetwin',
