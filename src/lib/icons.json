@@ -15,7 +15,6 @@
 	"https://www.distillersr.com/": "/icons/distillersr.com.png",
 	"https://eppi.ioe.ac.uk/cms/er4/": "/icons/eppi.ioe.ac.uk.png",
 	"https://www.rayyan.ai/": "/icons/rayyan.ai.png",
-	"https://github.com/ijmarshall/robotreviewer": "/icons/github.com.svg",
 	"https://github.com/SamuelSchmidgall/AgentLaboratory": "/icons/github.com.svg",
 	"https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/": "/icons/research.google.png",
 	"https://allenai.org/asta": "/icons/allenai.org.png",
@@ -102,5 +101,13 @@
 	"https://developers.openai.com/blog/rosalind-workbench": "/icons/developers.openai.com.png",
 	"https://www.vals.ai/benchmarks/science_index": "/icons/vals.ai.png",
 	"https://www.benchling.com/blog/introducing-science-foundries": "/icons/benchling.com.png",
-	"https://linkeddiscoveries.ncbi.nlm.nih.gov/": "/icons/linkeddiscoveries.ncbi.nlm.nih.gov.png"
+	"https://linkeddiscoveries.ncbi.nlm.nih.gov/": "/icons/linkeddiscoveries.ncbi.nlm.nih.gov.png",
+	"https://github.com/alphaXiv/OpenResearch": "/icons/github.com.svg",
+	"https://antigravity.google/use-cases/science/": "/icons/antigravity.google.png",
+	"https://hexagonmath.org/": "/icons/hexagonmath.org.svg",
+	"https://sciences-last-exam.org/": "/icons/sciences-last-exam.org.svg",
+	"https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science": "/icons/openai.com.png",
+	"https://livingscience.ai/": "/icons/livingscience.ai.png",
+	"https://github.com/aipoch/open-science": "/icons/github.com.svg",
+	"https://www.benchflow.ai/frontierphysics": "/icons/benchflow.ai.png"
 }
