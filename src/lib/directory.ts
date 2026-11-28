@@ -1389,6 +1389,16 @@ export const entries: Entry[] = [
 		sources: ['https://aipoch.com/open-science']
 	},
 	{
+		name: 'Orkas',
+		url: 'https://orkas.ai/agents/deep-researcher/?source=gh_ai4sciwatch',
+		category: 'assistants',
+		sub: 'agents',
+		blurb:
+			'Open-source desktop workspace whose built-in DeepResearcher compares sources and creates research briefs with citations, evidence notes and limitations.',
+		reviewed: '2026-11-28',
+		sources: ['https://github.com/Orkas-AI/Orkas']
+	},
+	{
 		name: 'FrontierPhysics',
 		url: 'https://www.benchflow.ai/frontierphysics',
 		category: 'benchmarks',
